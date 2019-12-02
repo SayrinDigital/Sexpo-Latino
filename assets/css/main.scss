@@ -1,0 +1,65 @@
+@import './vars.scss';
+
+h1,h2,h3,h4,h5,h6{
+    font-family: $say-base-font;
+    margin: 0;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    &.heading{
+        font-size: 4.5rem;
+    }
+    &.styled{
+        &:after{
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: $say-mainaccent-color;
+        }
+    }
+}
+
+p{
+    font-family: $say-p-base-font;
+}
+
+.say-background-primary{
+    background-color: $say-basedark-color;
+}
+
+.say-background-secondary{
+    background-color: $say-mainaccent-color;
+}
+
+.say-main-container{
+    margin-top: -80px;
+    position: relative;
+}
+
+.say-border-radius{
+    border-radius: $say-border-radius;
+}
+
+.uk-navbar-container{
+    position: relative;
+    z-index: 1;
+}
+
+@media(max-width: 640px){
+    h1,h2,h3,h4,h5,h6{
+        &.heading{
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media(max-height: 700px){
+    h1,h2,h3,h4,h5,h6{
+        &.heading{
+            font-size: 2.5rem;
+        }
+    } 
+}
