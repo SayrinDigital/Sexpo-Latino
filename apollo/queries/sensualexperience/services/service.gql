@@ -1,0 +1,12 @@
+query Service($id: ID!){
+    servicio(id: $id){
+        id
+        nombre
+        contenido
+        fotografias{
+            imagen{
+                url
+            }
+        }
+    }
+}

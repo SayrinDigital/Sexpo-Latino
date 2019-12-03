@@ -1,0 +1,8 @@
+query Services{
+    servicios{
+        id
+        nombre
+        contenido
+        portada
+    }
+}

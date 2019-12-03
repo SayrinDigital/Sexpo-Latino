@@ -1,13 +1,13 @@
 <template lang="pug">
 
-    div
-        nuxt-link(tag="div", :to="'/sensual-experience/categoria/' + 1").uk-inline.uk-position-relative.category-card.uk-width-1-1
-            img.uk-width-1-1.uk-background-cover(:src="category.cover")
+    div(v-if="category.imagen")
+        nuxt-link(:to="'/sensual-experience/categoria/' + category.id").uk-display-inline-block.uk-inline.uk-position-relative.category-card.uk-width-1-1
+            img.uk-width-1-1.uk-background-cover(:src="$axios.defaults.baseURL + category.imagen.url")
             .uk-position-cover.overlay
-            div.uk-position-center-left
-                div.uk-padding
-                    h2.title SCORTS PROFESIONALES
-                    h3.subtitle Slogan del Servicio
+            .uk-position-center-left
+                .uk-padding
+                    h2.title {{ category.nombre }}
+                    h3.subtitle {{ category.subtitulo }}
 
 
 

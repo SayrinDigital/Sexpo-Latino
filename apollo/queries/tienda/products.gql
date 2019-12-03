@@ -1,0 +1,11 @@
+query Products{
+    productos{
+        id
+        nombre
+        descripcion
+        cover{
+            url
+        }
+        precio
+    }
+}

@@ -1,12 +1,12 @@
 <template lang="pug">
 
     div
-        nuxt-link(tag="div", :to="'/sensual-experience/categoria/servicio/' + 1").uk-inline.uk-position-relative.category-card.uk-width-1-1
-            img.uk-width-1-1.uk-background-cover(:src="service.cover")
+        nuxt-link(tag="div", :to="'/sensual-experience/categoria/servicio/' + service.id").uk-inline.uk-position-relative.category-card.uk-width-1-1
+            img.uk-width-1-1.uk-background-cover(:src="$axios.defaults.baseURL + service.portada.url")
             .uk-position-cover.overlay
             div.uk-position-bottom-left
                 div.uk-padding
-                    h3.title Lucía
+                    h3.title {{ service.nombre }}
 
 
 

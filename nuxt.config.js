@@ -32,7 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    
+ 
   ],
   /*
   ** Nuxt.js dev-modules
@@ -47,6 +47,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     '@nuxtjs/apollo',
+    '@nuxtjs/markdownit',
+    'vue-currency-filter/nuxt',
   ],
   /*
   ** Axios module configuration
@@ -61,6 +63,12 @@ export default {
         httpEndpoint: process.env.BACKEND_URL || "http://localhost:1337/graphql"
       }
     }
+  },
+  markdownit: {  
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true
   },
   styleResources: {
     scss: [

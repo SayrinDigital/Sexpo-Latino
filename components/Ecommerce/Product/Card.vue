@@ -3,16 +3,20 @@
         .product-card.uk-text-center.uk-position-relative
             img(src="/imgs/ecommerce/toy.png", width="90", uk-img)
             .body
-                h3.product-name Sex Toy
-                p.content Mini Consolador Color Piel + Lubricante Bentley 50 gr.
+                h3.product-name {{ product.nombre }}
+                p.content {{ product.descripcion }}
                 .uk-margin
-                    h4.price $25.990 CLP
+                    h4.price {{ product.precio | currency  }}
             .add-to-cart.uk-position-top-right
                 a.uk-icon-button(uk-icon="icon: plus-circle; ratio: 0.8;")
 </template>
 
 <script>
+
+
 export default {
+
+props: ['product']
     
 }
 </script>
