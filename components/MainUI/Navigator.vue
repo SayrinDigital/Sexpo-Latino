@@ -6,13 +6,13 @@
             h3 Sex POSITIVE
       .uk-navbar-right
         .uk-navbar-item(class="uk-visible@s")
-          a.text-link Sensual Experience
+          nuxt-link.text-link(to="/sensual-experience") Sensual Experience
         .uk-navbar-item(class="uk-visible@s")
           nuxt-link.text-link(to="/tienda") Tienda
         .uk-navbar-item(class="uk-visible@s")
           nuxt-link.text-link(to="/aviso-legal") Aviso Legal
         .uk-navbar-item(class="uk-visible@s")
-          a.text-link Contáctenos
+          nuxt-link.text-link(to="/contacto") Contáctenos
         .uk-navbar-item
           a #[span(uk-icon="icon: shopping-bag; ratio: 0.8;")]
         .uk-navbar-item
