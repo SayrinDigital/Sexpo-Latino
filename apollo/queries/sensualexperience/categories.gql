@@ -1,0 +1,11 @@
+query Categories {  
+  secategorias {
+    id
+    slug
+    nombre
+    subtitulo
+    imagen{
+        url
+    }
+  }
+}

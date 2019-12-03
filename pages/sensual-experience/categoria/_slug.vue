@@ -6,7 +6,7 @@
             section.uk-section              
                 h1.styled.heading Servicio XX
                 div.uk-margin(class="uk-child-width-1-5@l uk-grid-small uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2 uk-grid", uk-grid="masonry: true;")
-                    ServiceCard(v-for="item in services", :service="item", :key="item")
+                    ServiceCard(v-for="(item,index) in services", :service="item", :key="index")
 
 </template>
 
