@@ -1,13 +1,13 @@
 <template lang="pug">
     
-    div.say-background-primary
+    div.say-background-primary(uk-height-viewport)
         Navigator
         .uk-container   
             section.uk-section              
                 h1.styled.heading Sensual Experience
                 div.uk-section.uk-section-small
                     h3 Categorías
-                    div.uk-margin(class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid", uk-grid="masonry: true;")
+                    div.uk-margin(uk-scrollspy="cls: uk-animation-slide-bottom-small; target: >div; delay: 100; repeat: true", class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid", uk-grid="masonry: true;")
                         CategoryCard(v-for="item in secategorias", :category="item", :key="item.slug")
 
 </template>

@@ -1,5 +1,9 @@
 @import './vars.scss';
 
+html, body{
+    background-color: $say-basedark-color;
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family: $say-base-font;
     margin: 0;
@@ -26,6 +30,12 @@ p{
     font-family: $say-p-base-font;
 }
 
+a{
+    &:hover{
+        text-decoration: none;
+    }
+}
+
 .say-background-primary{
     background-color: $say-basedark-color;
 }
@@ -47,6 +57,20 @@ p{
     position: relative;
     z-index: 1;
 }
+
+//Transition
+
+fade-enter-active {
+    transition: all .1s ease;
+  }
+fade-leave-active {
+    transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+fade-enter, .fade-leave-to
+  /* .slide-fade-leave-active for <2.1.8 */ {
+    /*transform: translateY(10px);*/
+    opacity: 0;
+  }
 
 @media(max-width: 640px){
     h1,h2,h3,h4,h5,h6{

@@ -1,0 +1,9 @@
+query Configuration{
+    configuracions{
+        quienes_somos
+        aviso_legal
+        banner_tienda{
+            url
+        }
+    }
+}

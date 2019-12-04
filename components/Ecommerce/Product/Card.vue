@@ -1,22 +1,33 @@
 <template lang="pug">
     div
         .product-card.uk-text-center.uk-position-relative
-            img(src="/imgs/ecommerce/toy.png", width="90", uk-img)
+            img(:src="$axios.defaults.baseURL + product.cover.url", width="90", uk-img)
             .body
                 h3.product-name {{ product.nombre }}
                 p.content {{ product.descripcion }}
                 .uk-margin
                     h4.price {{ product.precio | currency  }}
             .add-to-cart.uk-position-top-right
-                a.uk-icon-button(uk-icon="icon: plus-circle; ratio: 0.8;")
+                a.uk-icon-button(uk-icon="icon: plus-circle; ratio: 0.8;", href="#", @click="emitToCart(product)")
+
 </template>
 
 <script>
 
-
+import { mapMutations } from 'vuex' 
 export default {
 
-props: ['product']
+props: ['product'],
+methods:{
+    ...mapMutations({
+      removeFromCart: 'cart/remove',
+      addToCart: 'cart/add',
+    }),
+    emitToCart(product){
+        this.$emit('productAddedToCart', product)
+        this.addToCart(product)
+    }
+}
     
 }
 </script>

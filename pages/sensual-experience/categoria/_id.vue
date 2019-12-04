@@ -1,11 +1,11 @@
 <template lang="pug">
 
-    div.say-background-primary
+    div.say-background-primary(uk-height-viewport)
         Navigator
         .uk-container(v-if="secategoria")   
             section.uk-section              
                 h1.styled.heading {{ secategoria.nombre }}
-                div.uk-margin(class="uk-child-width-1-5@l uk-grid-small uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2 uk-grid", uk-grid="masonry: true;")
+                div.uk-margin(uk-scrollspy="cls: uk-animation-slide-bottom-small; target: >div; delay: 100; repeat: true", class="uk-child-width-1-5@l uk-grid-small uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2 uk-grid", uk-grid="masonry: true;")
                     ServiceCard(v-for="(item,index) in secategoria.servicios || []", :service="item", :key="index")
 
 </template>

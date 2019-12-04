@@ -2,13 +2,18 @@
 
     div.say-background-primary
         Navigator
-        .say-main-container(class="uk-child-width-1-2@m uk-grid", uk-grid)
-            client-only  
-                div.uk-background-cover.main-cover(uk-sticky="bottom: true; media: @m;", uk-img, data-src="https://images.unsplash.com/photo-1566113519555-06cab56beed8?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80")
+        .say-main-container(v-if="servicio", class="uk-child-width-1-2@m uk-grid", uk-grid)
             div
-                .uk-container
+                client-only 
+                    .uk-position-relative.uk-visible-toggle(uk-slideshow="ratio: false; autoplay: true; autoplay-interval: 1500;")  
+                        ul.uk-slideshow-items.main-cover(uk-height-viewport, uk-sticky="bottom: true; media: @m;")
+                            li(v-for="fotografia in servicio.fotografias")
+                                img(:src="$axios.defaults.baseURL + fotografia.imagen.url", uk-cover)
+
+            div
+                .uk-container(v-if="servicio.contenido")
                     .uk-section.uk-section-large
-                        div.content-service(v-if="servicio.contenido", v-html="$md.render(servicio.contenido)")
+                        div.content-service(v-if="servicio.contenido",v-html="$md.render(servicio.contenido)")
 
 </template>
 
@@ -41,8 +46,16 @@ export default {
 
 <style lang="scss">
 
+    .slider-action{
+        background-color: $say-basedark-color;
+        color: $say-mainaccent-color;
+        padding: 20px;
+        &:focus{
+            color: rgba($say-base-color, 0.5);
+        }
+    }
+
     .main-cover{
-        height: 100vh;
         z-index: 0;
     }
 

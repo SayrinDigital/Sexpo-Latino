@@ -6,7 +6,7 @@
       div
         div.main-container.bg-a.uk-flex.uk-flex-middle.uk-container.uk-position-relative.uk-overflow-hidden.uk-background-cover(uk-img, data-src="/imgs/home/bg-a.jpg")
           .uk-position-cover.uk-overlay.overlay
-          div.uk-position-relative
+          nuxt-link(to="sensual-experience").uk-display-inline-block.uk-position-relative
             .uk-overflow-hidden
               h1.title Sensual Experience
             .uk-overflow-hidden
@@ -15,7 +15,7 @@
       div
         div.bg-c.height-middle.uk-flex.uk-flex-middle.uk-container.uk-position-relative.uk-overflow-hidden.uk-background-cover(uk-img, data-src="/imgs/home/bg-b.jpg")
           .uk-position-cover.uk-overlay.overlay
-          div.uk-position-relative
+          nuxt-link(to="tienda").uk-display-inline-block.uk-position-relative
             .uk-overflow-hidden
               h2.title Tienda
             .uk-overflow-hidden
@@ -23,7 +23,7 @@
           .uk-position-cover.overlay-pink
         div.bg-b.height-middle.uk-flex.uk-flex-middle.uk-container.uk-position-relative.uk-overflow-hidden
           .uk-position-cover.uk-overlay.overlay
-          div.uk-position-relative
+          nuxt-link(to="quienes-somos").uk-display-inline-block.uk-position-relative
             .uk-overflow-hidden
               h2.title ¿Quiénes somos?
             .uk-overflow-hidden
@@ -39,8 +39,9 @@
 <script>
 
 import { gsap } from 'gsap'
-//import { RoughEase } from "gsap/EasePack";
+import { RoughEase } from "gsap/EasePack";
 import Navigator from '~/components/MainUI/Navigator'
+
 
 export default {
   data(){
@@ -50,7 +51,7 @@ export default {
     }
   },
   components: {
-    Navigator
+    Navigator,
   },
   beforeMount(){
     this.homeTl = new gsap.timeline({
@@ -60,9 +61,13 @@ export default {
     this.introTl = new gsap.timeline({
       onComplete: this.playHomeAnimation
     })
-    //gsap.registerPlugin(RoughEase);
+    
   },
   mounted(){
+
+    if(UIkit.modal('#result-modal-success'))
+      UIkit.modal('#result-modal-success').hide()
+    gsap.registerPlugin(RoughEase);
     this.homeAppearAnimation()
     this.introAppearAnimation()
   },

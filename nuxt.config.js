@@ -20,6 +20,10 @@ export default {
       { src: '/js/uikit-icons.min.js' },
     ]
   },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -48,7 +52,18 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
-    'vue-currency-filter/nuxt',
+    ['vue-currency-filter/nuxt', {
+      symbol: '$',
+      thousandsSeparator: '.',
+      fractionCount: 0,
+      fractionSeparator: '.',
+      symbolPosition: 'front',
+      symbolSpacing: true
+    }],
+    'nuxt-vuex-localstorage',
+  ],
+  serverMiddleware: [
+    '~/api/index.js',
   ],
   /*
   ** Axios module configuration

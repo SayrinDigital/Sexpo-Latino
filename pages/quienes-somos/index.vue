@@ -3,10 +3,10 @@
         Navigator.say-background-primary 
         section.uk-section.say-background-primary  
             .uk-container.uk-container-small            
-                h1.styled.heading Aviso Legal
+                h1.styled.heading ¿Quiénes Somos?
         section.uk-section-small.uk-background-default(v-if="configuracions[0]")
             .uk-container.uk-container-small
-                div.content(v-if="configuracions[0].aviso_legal",v-html="$md.render(configuracions[0].aviso_legal)")
+                div.content(v-if="configuracions[0].quienes_somos",v-html="$md.render(configuracions[0].quienes_somos)")
 </template>
 
 <script>
@@ -33,9 +33,8 @@ export default {
 </script>
 
 <style lang="scss">
-
     .content{
-            p, li{
+            p{
             line-height: 2rem;
             letter-spacing: 0.05rem;
             font-size: 1.1rem;
@@ -43,7 +42,7 @@ export default {
             margin-bottom: 3rem;
         }
         @media(max-width: 640px){
-            p, li{
+            p{
                 font-size: .98rem;
                 line-height: 1.8rem;
             }

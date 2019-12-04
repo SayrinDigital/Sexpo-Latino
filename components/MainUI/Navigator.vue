@@ -6,7 +6,7 @@
             .uk-navbar-left
               .uk-navbar-item
                 nuxt-link(to="/")
-                  h3 Sex POSITIVE
+                  img(src="/imgs/home/SEXPOSITIVE-white.png", width="180", uk-img)
             .uk-navbar-right
               .uk-navbar-item(class="uk-visible@s")
                 nuxt-link.text-link(to="/sensual-experience")  Sensual Experience
@@ -21,7 +21,8 @@
               .uk-navbar-item(class="uk-visible@s")
                 nuxt-link.text-link(to="/contacto") Contáctenos
               .uk-navbar-item
-                a #[span(uk-icon="icon: shopping-bag; ratio: 0.8;")]
+                transition(name="slide-fade", mode="out-in")
+                  nuxt-link.uk-overflow-hidden(:key="'cart-items-' + numberOfItems",to="/tienda/carro") #[span.uk-margin-small-right(uk-icon="icon: shopping-bag; ratio: 0.8;")] {{ numberOfItems }}
               .uk-navbar-item
                 a.instagram-link #[span(uk-icon="icon: instagram; ratio: 0.8;")]
 </template>
@@ -33,7 +34,8 @@ import SECategories from '~/apollo/queries/sensualexperience/categories.gql'
 export default {
     data(){
       return{
-        secategorias: []
+        secategorias: [],
+        
       }
     },
     apollo:{
@@ -42,10 +44,30 @@ export default {
         query: SECategories
       }
     },
+    computed: {
+      numberOfItems(){
+        return this.$store.getters['cart/numberOfItems']
+      },
+      saleToken(){
+        return this.$store.state.localStorage.saleToken
+      }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
+
+    .slide-fade-enter-active {
+      transition: all .3s ease;
+    }
+    .slide-fade-leave-active {
+      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active for <2.1.8 */ {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
 
     .sticky-navbar-bg{
       background-color: $say-basedark-color;
@@ -84,6 +106,9 @@ export default {
             color: #fff;
             font-family: $say-p-base-font;         
             transition: all 200ms ease-in-out;
+            &:hover{
+              text-decoration: none;
+            }
             &.instagram-link{
               background: $say-mainaccent-color;
               padding: 12px 15px;

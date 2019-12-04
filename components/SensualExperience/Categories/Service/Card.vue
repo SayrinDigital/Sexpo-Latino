@@ -1,7 +1,7 @@
 <template lang="pug">
 
     div
-        nuxt-link(tag="div", :to="'/sensual-experience/categoria/servicio/' + service.id").uk-inline.uk-position-relative.category-card.uk-width-1-1
+        nuxt-link(:to="'/sensual-experience/categoria/servicio/' + service.id").uk-display-inline-block.uk-position-relative.category-card.uk-width-1-1
             img.uk-width-1-1.uk-background-cover(:src="$axios.defaults.baseURL + service.portada.url")
             .uk-position-cover.overlay
             div.uk-position-bottom-left
