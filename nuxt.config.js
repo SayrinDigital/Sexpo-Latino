@@ -70,12 +70,12 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:1337'
+    baseURL: 'https://say.sexpositive.cl/'
   },
   apollo: {  
     clientConfigs: {
       default: {
-        httpEndpoint: process.env.BACKEND_URL || "http://localhost:1337/graphql"
+        httpEndpoint: process.env.BACKEND_URL || "https://say.sexpositive.cl/graphql"
       }
     }
   },
