@@ -20,7 +20,7 @@ export default {
       { src: '/js/uikit-icons.min.js' },
     ]
   },
-  transition: {
+  pageTransition: {
     name: 'fade',
     mode: 'out-in'
   },
