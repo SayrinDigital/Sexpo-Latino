@@ -67,7 +67,7 @@ export default {
 
     if(UIkit.modal('#result-modal-success'))
       UIkit.modal('#result-modal-success').hide()
-    gsap.registerPlugin(RoughEase);
+    //gsap.registerPlugin(RoughEase);
     this.homeAppearAnimation()
     this.introAppearAnimation()
   },
