@@ -39,7 +39,6 @@
 <script>
 
 import { gsap } from 'gsap'
-import { RoughEase } from "gsap/EasePack";
 import Navigator from '~/components/MainUI/Navigator'
 
 
@@ -67,7 +66,6 @@ export default {
 
     if(UIkit.modal('#result-modal-success'))
       UIkit.modal('#result-modal-success').hide()
-    //gsap.registerPlugin(RoughEase);
     this.homeAppearAnimation()
     this.introAppearAnimation()
   },

@@ -1,5 +1,6 @@
 
 export default {
+  debug: true,
   mode: 'universal',
   server: {
     port: 3100, // default: 3000
