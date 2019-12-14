@@ -24,7 +24,7 @@
                 transition(name="slide-fade", mode="out-in")
                   nuxt-link.uk-overflow-hidden(:key="'cart-items-' + numberOfItems",to="/tienda/carro") #[span.uk-margin-small-right(uk-icon="icon: shopping-bag; ratio: 0.8;")] {{ numberOfItems }}
               .uk-navbar-item
-                a.instagram-link #[span(uk-icon="icon: instagram; ratio: 0.8;")]
+                a.instagram-link(href="https://www.instagram.com/proximasexpo/", target="_blank") #[span(uk-icon="icon: instagram; ratio: 0.8;")]
 </template>
 
 <script>
