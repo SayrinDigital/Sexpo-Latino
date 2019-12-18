@@ -89,7 +89,7 @@ export default {
             hasBeenSent: false
         }
     },
-    beforeMount(){
+    mounted(){
         UIkit.modal('#modal-formApplyService').show()  
     },
     methods: {
