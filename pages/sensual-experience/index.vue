@@ -11,9 +11,9 @@
                         div.uk-margin(uk-scrollspy="cls: uk-animation-slide-bottom-small; target: >div; delay: 100; repeat: true", class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid", uk-grid="masonry: true;")
                             CategoryCard(v-for="item in secategorias", :category="item", :key="item.slug")
 
-        #modal-formApplyService.uk-flex-top(uk-modal="bg-close: false; ")
+        #modal-formApplyService.uk-open.uk-flex-top.uk-modal(uk-modal="bg-close: false;", style="display: block;")
             .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
-                button.uk-modal-close-default(type="button", uk-close)
+                button.uk-modal-close-default.uk-icon.uk-close(type="button", uk-close)
                 div
                     div.uk-grid-match(class="uk-child-width-1-1@m", uk-grid)
                         //- div
@@ -90,7 +90,7 @@ export default {
         }
     },
     mounted(){
-        UIkit.modal('#modal-formApplyService').show()  
+        
     },
     methods: {
         sendInformation(){
