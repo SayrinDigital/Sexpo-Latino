@@ -47,7 +47,7 @@ export default {
             message: '',
             isSending: false,
             hasBeenSent: false,
-            baseUrl: 'http://localhost:3100/api/',
+            baseUrl: 'https://sexpositive.cl/api/',
         }
     },
     methods: {

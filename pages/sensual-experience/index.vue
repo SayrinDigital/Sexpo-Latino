@@ -84,7 +84,7 @@ export default {
             isPublished : "",
             isInterestedInWorkshops : "",
             whatsapp : "",
-            baseUrl: 'http://localhost:3100/api/',
+            baseUrl: 'https://sexpositive.cl/api/',
             isSending: false,
             hasBeenSent: false
         }
