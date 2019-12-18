@@ -53,7 +53,7 @@ export default {
     data(){
         return{
             couponDiscount: '',
-            baseUrl: 'http://localhost:3000/api',
+            baseUrl: 'https://sexpositive.cl/api',
             userMail: '',
             isProcessingSale: false
         }
