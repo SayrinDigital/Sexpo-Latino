@@ -4,5 +4,6 @@ query Services{
         nombre
         contenido
         portada
+        whatsapp
     }
 }

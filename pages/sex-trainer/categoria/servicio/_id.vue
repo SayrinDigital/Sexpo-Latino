@@ -14,7 +14,8 @@
                 .uk-container(v-if="servicio.contenido")
                     .uk-section.uk-section-large
                         div.content-service(v-if="servicio.contenido",v-html="$md.render(servicio.contenido)")
-
+                        div.uk-text-center.uk-margin
+                            a.contact-button(target="_blank" :href="'https://wa.me/'+servicio.whatsapp+'text=Hola%20te%20vi%20en%20Sexpositive.%20Me%20gustaría%20consultar%20por%20tus%20servicios.'") #[span(class="uk-icon uk-margin-small-right" uk-icon="phone")] {{ servicio.whatsapp }}
 </template>
 
 <script>
@@ -45,6 +46,17 @@ export default {
 </script>
 
 <style lang="scss">
+
+    .contact-button{
+        background-color: $say-mainaccent-color;
+        border-radius: 170px;
+        padding: 15px 20px;
+        color: #fff;
+        transition: all 200ms ease-in-out;
+        &:hover{
+            color: rgba(255,255,255,0.5);
+        }
+    }
 
     .slider-action{
         background-color: $say-basedark-color;

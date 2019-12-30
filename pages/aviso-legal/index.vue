@@ -40,7 +40,8 @@ export default {
             letter-spacing: 0.05rem;
             font-size: 1.1rem;
             color: $say-dark-text-color;
-            margin-bottom: 3rem;
+            margin-bottom: .5rem;
+            text-align: justify;
         }
         @media(max-width: 640px){
             p, li{

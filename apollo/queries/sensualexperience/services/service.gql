@@ -3,6 +3,7 @@ query Service($id: ID!){
         id
         nombre
         contenido
+        whatsapp
         fotografias{
             imagen{
                 url

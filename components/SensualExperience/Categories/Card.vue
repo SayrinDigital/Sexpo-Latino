@@ -1,7 +1,7 @@
 <template lang="pug">
 
     div(v-if="category.imagen")
-        nuxt-link(:to="'/sensual-experience/categoria/' + category.id").uk-display-inline-block.uk-inline.uk-position-relative.category-card.uk-width-1-1
+        nuxt-link(:to="'/sex-trainer/categoria/' + category.id").uk-display-inline-block.uk-inline.uk-position-relative.category-card.uk-width-1-1
             img.uk-width-1-1.uk-background-cover(:src="$axios.defaults.baseURL + category.imagen.url")
             .uk-position-cover.overlay
             .uk-position-center-left

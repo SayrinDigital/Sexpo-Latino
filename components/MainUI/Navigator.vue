@@ -9,11 +9,11 @@
                   img(src="/imgs/home/SEXPOSITIVE-white.png", width="180", uk-img)
             .uk-navbar-right
               .uk-navbar-item(class="uk-visible@s")
-                nuxt-link.text-link(to="/sensual-experience")  Sensual Experience
+                nuxt-link.text-link(to="/sex-trainer")  Sex Trainer
                 div(uk-dropdown="animation: uk-animation-slide-top-small; duration: 150; delay-hide: 10;")
                   ul.uk-list.uk-margin-remove.uk-padding-remove.menu-list
                     li(:key="'secategory-menu-' + index", v-for="(menu, index) in secategorias")
-                      nuxt-link(:to="'/sensual-experience/categoria/' + menu.id") #[span(uk-icon="icon: chevron-right; ratio: 0.8;")] {{ menu.nombre }}               
+                      nuxt-link(:to="'/sex-trainer/categoria/' + menu.id") #[span(uk-icon="icon: chevron-right; ratio: 0.8;")] {{ menu.nombre }}               
               .uk-navbar-item(class="uk-visible@s")
                 nuxt-link.text-link(to="/tienda") Tienda
               .uk-navbar-item(class="uk-visible@s")

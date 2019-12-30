@@ -6,11 +6,11 @@
       div
         div.main-container.bg-a.uk-flex.uk-flex-middle.uk-container.uk-position-relative.uk-overflow-hidden.uk-background-cover(uk-img, data-src="/imgs/home/bg-a.jpg")
           .uk-position-cover.uk-overlay.overlay
-          nuxt-link(to="sensual-experience").uk-display-inline-block.uk-position-relative
+          nuxt-link(to="sex-trainer").uk-display-inline-block.uk-position-relative
             .uk-overflow-hidden
-              h1.title Sensual Experience
+              h1.title Sex Trainer
             .uk-overflow-hidden
-              h4.subtitle Cumple esa fantasía que tanto anhelas
+              h4.subtitle CONOCE EL SERVICIO DE NUESTR@S PROFESIONALES
           .uk-position-cover.overlay-pink
       div
         div.bg-c.height-middle.uk-flex.uk-flex-middle.uk-container.uk-position-relative.uk-overflow-hidden.uk-background-cover(uk-img, data-src="/imgs/home/bg-b.jpg")
@@ -19,7 +19,7 @@
             .uk-overflow-hidden
               h2.title Tienda
             .uk-overflow-hidden
-              h5.subtitle Productos que te ayudarán a cumplir esa fantasía
+              h5.subtitle REVISA NUESTRO CATÁLOGO DE JUGUETES 
           .uk-position-cover.overlay-pink
         div.bg-b.height-middle.uk-flex.uk-flex-middle.uk-container.uk-position-relative.uk-overflow-hidden
           .uk-position-cover.uk-overlay.overlay

@@ -5,7 +5,7 @@
             Navigator
             .uk-container   
                 section.uk-section              
-                    h1.styled.heading Sensual Experience
+                    h1.styled.heading Sex Trainer
                     div.uk-section.uk-section-small
                         h3 Categorías
                         div.uk-margin(uk-scrollspy="cls: uk-animation-slide-bottom-small; target: >div; delay: 100; repeat: true", class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-1 uk-grid", uk-grid="masonry: true;")
@@ -22,7 +22,7 @@
                             div
                                 form(v-on:submit.prevent="sendInformation")
                                     h3 Únete a SexPositive
-                                    p Esta sección será publicada en febrero. Si quieres ser parte del portal de SEXPOSITIVE.cl, ofrecer tus servicios y obtener un cupo en los workshops de capacitación presencial que haremos mes a mes, llena este formulario y nos comunicaremos contigo.
+                                    p Esta sección será publicada en febrero. Si quieres ser parte del portal de SEXPOSITIVE.cl y acceder a nuestras capacitaciones en sexualidad humana y prácticas sexuales alternativas, además de poder ofrecer tus servicios y obtener los variados beneficios que entregan nuestras marcas amigas, llena el formulario y nos comunicaremos contigo.
                                     .uk-margin
                                         label.uk-form-label Nombre o Apodo
                                         .uk-form-controls
