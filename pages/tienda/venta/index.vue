@@ -31,7 +31,7 @@ import { mapMutations } from 'vuex'
 export default {
     data(){
         return{
-            baseUrl: 'http://localhost:3100/api',
+            baseUrl: 'https://sexpositive.cl/api',
             orderResponse: null
         }
     },
@@ -45,7 +45,7 @@ export default {
     },
     methods: {
         checkOrder(){
-            this.$axios.post('/api/flow/result',{
+            this.$axios.post(this.baseUrl + '/api/flow/result',{
                 token: this.saleToken
             })
             .then(response => {
