@@ -45,7 +45,7 @@ export default {
     },
     methods: {
         checkOrder(){
-            this.$axios.post(this.baseUrl + '/flow/result',{
+            this.$axios.post('/api/flow/result',{
                 token: this.saleToken
             })
             .then(response => {
