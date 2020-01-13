@@ -20,7 +20,7 @@ app.post('/sendInformationMail', (req, res) => {
 
   const mailOptions = {
     from: 'SexPositive <hola@sexpositive.cl>',  // sender address
-    to: 'josepuma@sayrin.cl', // list of receivers
+    to: 'hola@sexpositive.cl', // list of receivers
     subject: '[Sensual Experience] Área de Soporte Sexpositive', // Subject line
     html: '<div  style="padding: 20px; background-color: #fcfcfc;" class="main-container"><img style="margin-bottom: 20px;" class="logo" width="150" src="https://sexpositive.cl/imgs/home/SEXPOSITIVE-white.png" /><div style="background: #fff;padding: 20px;border: 1px solid rgba(0,0,0,0.1);" class="container"><h2 style="font-family: Open Sans, sans-serif; font-weight: 300;">Área de Soporte Sexpositive</h2><h3  style="font-family: Open Sans, sans-serif; font-weight: 300;">Estimado, se envía información proporcionada dentro del formulario de Sensual Experience:</h3><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Nombre: ' + req.body.name + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">¿Trabajas en el rubro?: ' + req.body.worksRubro + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Comuna: ' + req.body.comuna + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">¿Publicado en otro portal?: ' + req.body.isPublished + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">¿Interés en workshops?: ' + req.body.isInterestedInWorkshops + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Whatsapp: ' + req.body.whatsapp + '</p></div></div>'
   };
@@ -48,7 +48,7 @@ app.post('/sendContactMail', (req, res) => {
 
   const mailOptions = {
     from: 'SexPositive <hola@sexpositive.cl>',  // sender address
-    to: 'josepuma@sayrin.cl', // list of receivers
+    to: 'hola@sexpositive.cl', // list of receivers
     subject: '[Contacto] Área de Soporte Sexpositive', // Subject line
     html: '<div  style="padding: 20px; background-color: #fcfcfc;" class="main-container"><img style="margin-bottom: 20px;" class="logo" width="150" src="https://sexpositive.cl/imgs/home/SEXPOSITIVE-white.png" /><div style="background: #fff;padding: 20px;border: 1px solid rgba(0,0,0,0.1);" class="container"><h2 style="font-family: Open Sans, sans-serif; font-weight: 300;">Área de Soporte Sexpositive</h2><h3  style="font-family: Open Sans, sans-serif; font-weight: 300;">Estimado, se envía información proporcionada dentro del formulario de Contacto:</h3><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Nombre: ' + req.body.name + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Email: ' + req.body.email + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Teléfono: ' + req.body.phone + '</p><p  style="font-family: Open Sans, sans-serif; font-weight: 300;">Mensaje: ' + req.body.message + '</p></div></div>'
   };
