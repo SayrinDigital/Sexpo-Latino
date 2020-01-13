@@ -31,7 +31,7 @@ import { mapMutations } from 'vuex'
 export default {
     data(){
         return{
-            baseUrl: 'http://localhost:3000/api',
+            baseUrl: 'http://localhost:3100/api',
             orderResponse: null
         }
     },

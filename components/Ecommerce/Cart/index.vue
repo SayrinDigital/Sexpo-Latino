@@ -32,7 +32,7 @@
                         .uk-margin-small
                             input.uk-input.uk-form-large.usermail-input(type="email", v-model="userMail", placeholder="Ingrese su email")
                         .uk-margin-small(v-if="userMail")
-                            a.uk-button.proceed-to-pay(href="#", @click="payTotal") 
+                            a.uk-button.proceed-to-pay(href="#", @click="createOrder") 
                                 span.uk-margin-small-right(uk-spinner, v-if="isProcessingSale") Procesando Compra 
                                 span(v-else)  Pagar por Webpay
                         hr.uk-hr
@@ -63,11 +63,37 @@ export default {
         removeFromCart: 'cart/remove',
         addToCart: 'cart/add',
         }),
-        payTotal(){
+        generateOrderContent(){
+            var order = this.selectedProducts
+            var orderContent = ''
+            for(var i=0; i<order.length; i++){
+                orderContent += 'ID: ' + order[i].id + '\n'
+                orderContent += 'Nombre: ' + order[i].nombre + '\n'
+                orderContent += 'Precio: ' + order[i].precio + '\n'
+                orderContent += 'Cantidad: ' + order[i].quantity + '\n'
+                orderContent += '\n'
+            }
+            return orderContent
+        },
+        createOrder(){
             this.isProcessingSale = true
+            this.$axios.post('/ventas',{
+                articulos: this.generateOrderContent(),
+                estado: 'generada'
+            })
+            .then(response => {
+                this.payTotal(response.data.id)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+        },
+        payTotal(orderId){
+            
             this.$axios.post(this.baseUrl + '/flow/create_order',{
                 price: this.price,
-                email: this.userMail
+                email: this.userMail,
+                id: orderId
             })
             .then(response => {
                 this.$store.commit('localStorage/setSaleToken', response.data.token)

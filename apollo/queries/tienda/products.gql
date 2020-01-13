@@ -6,6 +6,11 @@ query Products{
         cover{
             url
         }
+        fotos{
+            imagen{
+                url
+            }
+        }
         precio
     }
 }

@@ -1,7 +1,13 @@
 <template lang="pug">
     div
         .product-card.uk-text-center.uk-position-relative
-            img(:src="$axios.defaults.baseURL + product.cover.url", width="90", uk-img)
+            
+            div.uk-position-relative.uk-visible-toggle(uk-slideshow="autoplay: true; autoplay-interval: 1500;")
+                ul.uk-slideshow-items
+                    li
+                        img(:src="$axios.defaults.baseURL + product.cover.url", width="90", uk-img)
+                    li(v-for="photo in product.fotos", v-if="product.fotos")
+                        img(:src="$axios.defaults.baseURL + photo.imagen.url", width="90", uk-img)
             .body
                 h3.product-name {{ product.nombre }}
                 p.content {{ product.descripcion }}
