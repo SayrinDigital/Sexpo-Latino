@@ -4,10 +4,10 @@
             
             div.uk-position-relative.uk-visible-toggle(uk-slideshow="autoplay: true; autoplay-interval: 1500;")
                 ul.uk-slideshow-items
-                    li
+                    li( v-if="product.cover")
                         img(:src="$axios.defaults.baseURL + product.cover.url", width="90", uk-img)
                     li(v-for="photo in product.fotos", v-if="product.fotos")
-                        img(:src="$axios.defaults.baseURL + photo.imagen.url", width="90", uk-img)
+                        img(:src="$axios.defaults.baseURL + photo.imagen.url", v-if="photo.imagen", width="90", uk-img)
             .body
                 h3.product-name {{ product.nombre }}
                 p.content {{ product.descripcion }}
