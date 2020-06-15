@@ -32,7 +32,7 @@
 
     .loader.uk-flex.uk-flex-middle.uk-flex-center
       div
-        h2.main-text-loader SEX #[span POSITIVE]
+        h2.main-text-loader CHILE #[span NUDE]
 
 </template>
 

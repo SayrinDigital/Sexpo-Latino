@@ -6,9 +6,9 @@
             .uk-navbar-left
               .uk-navbar-item
                 nuxt-link(to="/")
-                  img(src="/imgs/home/SEXPOSITIVE-white.png", width="180", uk-img)
+                  img(:src="$axios.defaults.baseURL + '/uploads/27dd8632871a44c48b49c09bfb4b5870.png'", width="180", uk-img)
             .uk-navbar-right
-              .uk-navbar-item(class="uk-visible@s")
+              //-.uk-navbar-item(class="uk-visible@s")
                 nuxt-link.text-link(to="/sex-trainer")  Sex Trainer
                 div(uk-dropdown="animation: uk-animation-slide-top-small; duration: 150; delay-hide: 10;")
                   ul.uk-list.uk-margin-remove.uk-padding-remove.menu-list

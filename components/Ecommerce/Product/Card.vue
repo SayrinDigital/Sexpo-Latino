@@ -1,20 +1,25 @@
 <template lang="pug">
     div
-        .product-card.uk-text-center.uk-position-relative
+        nuxt-link.uk-overflow-hidden.say-border-radius.uk-text-center(v-if="product.cover", :to="'/tienda/producto/' + product.id ")
+            img.uk-width-1-1.uk-background-cover(:src="$axios.defaults.baseURL + product.cover.url")
+            .product-card
+                .body
+                    h3.product-name {{ product.nombre }}
+                    p.content {{ product.descripcion }}
+                //-div.uk-position-relative.uk-visible-toggle(uk-slideshow="autoplay: true; autoplay-interval: 1500;")
+                    ul.uk-slideshow-items
+                        li( v-if="product.cover")
+                            img(:src="$axios.defaults.baseURL + product.cover.url", width="90", uk-img)
+                        li(v-for="photo in product.fotos", v-if="product.fotos")
+                            img(:src="$axios.defaults.baseURL + photo.imagen.url", v-if="photo.imagen", width="90", uk-img)
+                //-.body
+                    h3.product-name {{ product.nombre }}
+                    p.content {{ product.descripcion }}
+                    .uk-margin
+                        h4.price {{ product.precio | currency  }}
             
-            div.uk-position-relative.uk-visible-toggle(uk-slideshow="autoplay: true; autoplay-interval: 1500;")
-                ul.uk-slideshow-items
-                    li( v-if="product.cover")
-                        img(:src="$axios.defaults.baseURL + product.cover.url", width="90", uk-img)
-                    li(v-for="photo in product.fotos", v-if="product.fotos")
-                        img(:src="$axios.defaults.baseURL + photo.imagen.url", v-if="photo.imagen", width="90", uk-img)
-            .body
-                h3.product-name {{ product.nombre }}
-                p.content {{ product.descripcion }}
-                .uk-margin
-                    h4.price {{ product.precio | currency  }}
-            .add-to-cart.uk-position-top-right
-                a.uk-icon-button(uk-icon="icon: plus-circle; ratio: 0.8;", href="#", @click="emitToCart(product)")
+                //-.add-to-cart.uk-position-top-right
+                    a.uk-icon-button(uk-icon="icon: plus-circle; ratio: 0.8;", href="#", @click="emitToCart(product)")
 
 </template>
 
@@ -45,7 +50,6 @@ methods:{
         border-radius: $say-border-radius;
         padding: 25px 10px;
         .body{
-            margin-top: 20px;
             .product-name{
                 margin: 0;
             }

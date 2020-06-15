@@ -1,5 +1,5 @@
-query Products{
-    products(sort: "createdAt:DESC"){
+query Products($id: ID!){
+    product(id: $id){
         id
         nombre
         descripcion
@@ -12,5 +12,6 @@ query Products{
             }
         }
         precio
+        descripcionVenta
     }
 }

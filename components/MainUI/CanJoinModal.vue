@@ -4,14 +4,20 @@
         div.uk-flex-top#modal-message-home(uk-modal="bg-close: false; esc-close: false;")
             .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
                 div.uk-text-center  
-                    h3(clasS="uk-width-medium@m uk-margin-auto") Para acceder a SexPositive debes cumplir con la mayoría de edad.
+                    h2.main-title Advertencia
+                    //h3(clasS="uk-width-medium@m uk-margin-auto") Para acceder a SexPositive debes cumplir con la mayoría de edad.
 
-                div.uk-text-center.uk-margin-medium-top
-                    h4 ¿Cumples con este requisito?
+                div.uk-margin-medium-top
+                    ul.uk-list.uk-list-circle
+                        li Contenido explícito de gente real
+                        li Todos los packs están publicados bajo consentimiento
+                        li Debes ser mayor de edad para entrar, comprar y/o publicar tus fotos
+                        li Cualquier acto ilícito será denunciado a las autoridades correspondientes
+                        li Todos los packs fake son eliminados
                 
                 div.uk-text-center.uk-margin-medium-top
-                    button.accept-button.uk-button(@click="aceppt") Si! Soy Mayor de edad
-                    a.uk-margin.close-button.uk-button(href="https://google.cl") Oops! Entré por error
+                    button.accept-button.uk-button(@click="aceppt") Entrar, Soy Mayor de Edad
+                    a.uk-margin.close-button.uk-button(href="https://google.cl") Salir, No Me Interesa
 
 </template>
 
@@ -26,14 +32,18 @@ export default {
     },
     methods: {
         aceppt(){
-          this.$store.commit('localStorage/toggle')
-          UIkit.modal('#modal-message-home').hide()
+            this.$store.commit('localStorage/toggle')
+            UIkit.modal('#modal-message-home').hide()
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+
+    .main-title{
+        font-size: 3rem;
+    }
 
     #modal-message-home{
         .uk-modal-dialog{

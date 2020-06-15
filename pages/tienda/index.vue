@@ -4,7 +4,7 @@
         Navigator
         .uk-container   
             section.uk-section              
-                h1.styled.heading Nuestra Tienda  
+                //-h1.styled.heading Nuestra Tienda  
                 section(v-if="configuracions[0]")
                     img.uk-width-1-1(:src="$axios.defaults.baseURL + configuracions[0].banner_tienda.url", v-if="configuracions[0].banner_tienda" alt="alt")
                 div(uk-grid,uk-scrollspy="cls: uk-animation-slide-bottom-small; target: >div; delay: 100; repeat: false", class="uk-grid-small uk-grid-match uk-grid uk-child-width-1-5@l uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2")

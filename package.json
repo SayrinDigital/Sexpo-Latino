@@ -27,13 +27,15 @@
     "nuxt": "^2.0.0",
     "nuxt-express-module": "0.0.11",
     "nuxt-vuex-localstorage": "^1.2.6",
-    "uikit": "^3.2.3",
+    "uikit": "^3.5.4",
     "vue-currency-filter": "^3.4.3"
   },
   "devDependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
-    "sass-loader": "^8.0.0"
+    "sass-loader": "^8.0.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }

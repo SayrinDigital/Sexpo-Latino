@@ -21,7 +21,7 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Didact+Gothic|PT+Sans|Staatliches&display=swap' }
     ],
     script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js' },
+      { src: 'https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js' },
       { src: '/js/uikit-icons.min.js' },
     ]
   },
