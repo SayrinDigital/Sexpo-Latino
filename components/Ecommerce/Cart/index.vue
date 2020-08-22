@@ -36,7 +36,7 @@
                                 span.uk-margin-small-right(uk-spinner, v-if="isProcessingSale") Procesando Compra 
                                 span(v-else)  Pagar por Webpay
                         hr.uk-hr
-                        .coupon-container
+                        //-.coupon-container
                             h5 Cupón de Descuento
                             .uk-margin
                                 input.uk-form-large.coupon-input.uk-input(type="text", v-model="couponDiscount", placeholder="CMEHJ3A")
